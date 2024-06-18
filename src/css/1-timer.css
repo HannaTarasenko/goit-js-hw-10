@@ -1,0 +1,7 @@
+@import 'modern-normalize/modern-normalize.css';
+
+section {
+    padding-top: 36px;
+    padding-left: 156px;
+    background-color: #ffffff;
+}
