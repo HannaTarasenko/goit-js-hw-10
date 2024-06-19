@@ -1,3 +1,5 @@
+"use strict";
+
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import iziToast from "izitoast";
@@ -21,12 +23,13 @@ const options = {
     onClose(selectedDates) {
         const selectedDate = selectedDates[0];
         if (selectedDate <= new Date()) {
-            iziToast.error({ title: 'Error', message: 'Please choose a date in the future', position: 'topRight'});
-            startButton.setAttribute('disabled', '');
+            iziToast.error({ title: 'Error', message: 'Please choose a date in the future', position: 'topRight' });
+            startButton.disabled = true;
             startButton.classList.remove('valid-date');
         } else {
-            startButton.removeAttribute('disabled', '')
-            startButton.classList.add('valid-date')
+            userSelectedDate = selectedDate;
+            startButton.disabled = false;
+            startButton.classList.add('valid-date');
         }
     }
 };
@@ -35,14 +38,14 @@ flatpickr(timeInput, options);
 
 startButton.addEventListener('click', () => {
     if (!userSelectedDate) return;
-    
+
     startButton.disabled = true;
     timeInput.disabled = true;
 
     intervalID = setInterval(() => {
         const currentTime = new Date();
         const diff = userSelectedDate - currentTime;
-        
+
         if (diff <= 0) {
             clearInterval(intervalID);
             updateTimeBlocks({ days: 0, hours: 0, minutes: 0, seconds: 0 });
