@@ -50,6 +50,7 @@ startButton.addEventListener('click', () => {
             clearInterval(intervalID);
             updateTimeBlocks({ days: 0, hours: 0, minutes: 0, seconds: 0 });
             timeInput.disabled = false;
+            startButton.classList.remove('valid-date');
             return;
         }
 

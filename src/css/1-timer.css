@@ -44,29 +44,38 @@ input.flatpickr-input.active:disabled {
 }
 
 button[data-start] {
-    border-radius: 8px;
-    padding: 8px 16px;
-    width: 75px;
-    height: 40px;
-    background-color: #cfcfcf;
-    border-color: #cfcfcf;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.04em;
-    color: #989898;
-    outline: none;
-  }
-  
-  button[data-start].valid-date {
-    background-color: #4e75ff;
-    color: #ffffff;
-  }
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 75px;
+  height: 40px;
+  background-color: #cfcfcf;
+  border-color: #cfcfcf;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #989898;
+  outline: none;
+}
 
-  button[data-start].hover {
-    background-color: #6c8cff;
-  }
+button[data-start].valid-date {
+  background-color: #4e75ff;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button[data-start].valid-date:hover {
+  background-color: #6c8cff;
+  color: #ffffff;
+}
+
+button[data-start]:disabled {
+  background-color: #cfcfcf;
+  border-color: #cfcfcf;
+  color: #989898;
+}
+
   
   .timer {
     width: 346px;
