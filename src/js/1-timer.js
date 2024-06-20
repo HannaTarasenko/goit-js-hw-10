@@ -23,7 +23,20 @@ const options = {
     onClose(selectedDates) {
         const selectedDate = selectedDates[0];
         if (selectedDate <= new Date()) {
-            iziToast.error({ title: 'Error', message: 'Please choose a date in the future', position: 'topRight' });
+            iziToast.error({ title: 'Error', 
+                message: 'Please choose a date in the future', 
+                backgroundColor: '#ef4040',
+                messageColor: '#fff',
+                messageSize: '16',
+                imageWidth: 302,
+                close: true,
+                closeOnEscape: true,
+                closeOnClick: true,
+                progressBar: true,
+                progressBarColor: '#b51b1b',
+                transitionIn: 'flipInX',
+                transitionOut: 'flipOutX',
+                position: 'topRight',});
             startButton.disabled = true;
             startButton.classList.remove('valid-date');
         } else {
